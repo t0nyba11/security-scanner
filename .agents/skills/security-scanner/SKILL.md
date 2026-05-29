@@ -72,14 +72,14 @@ For each confirmed finding, establish:
 * Source: attacker-controlled input, untrusted dependency, exposed configuration, credential, or privileged identity
 * Sink: sensitive operation, trust boundary, parser, database query, filesystem access, network call, auth decision, deployment permission, or secret exposure
 * Missing or weak control: validation, authorization, isolation, sanitization, escaping, encryption, pinning, permission boundary, or runtime hardening
-* Exploitability: realistic conditions required to exploit the issue
-* Impact: concrete security consequence for confidentiality, integrity, availability, tenancy, compliance, or supply chain trust
+* Exploitability: potential conditions required to exploit the issue
+* Impact: security consequence for confidentiality, integrity, availability, tenancy, compliance, or supply chain trust
 
 Only create a confirmed finding when there is enough evidence for an owner to fix it without first redoing the investigation. Do not report a firm finding when evidence only shows a theoretical pattern with no reachable path. Put uncertain but useful observations under "Potential issues" or "Coverage gaps" with the uncertainty stated plainly.
 
 ## Severity
 
-Use severity based on realistic impact and exploitability in this codebase:
+Use severity based on impact and exploitability in this codebase:
 
 * Critical: likely remote compromise, credential theft, tenant breakout, destructive write access, or full supply chain compromise with little user interaction
 * High: practical unauthorized access, privilege escalation, sensitive data exposure, command execution, SSRF to sensitive networks, or exploitable injection
@@ -91,7 +91,7 @@ Use severity based on realistic impact and exploitability in this codebase:
 
 Use confidence to describe evidence quality:
 
-* High: confirmed vulnerable code path, concrete affected version and applicability, reproducible scanner evidence, or direct configuration exposure
+* High: confirmed vulnerable code path, affected version and applicability, reproducible scanner evidence, or direct configuration exposure
 * Medium: likely issue with strong indicators but incomplete runtime, deployment, or usage context
 * Low: plausible concern that needs owner confirmation or additional evidence
 
@@ -107,7 +107,7 @@ Do not report:
 * Secrets-looking strings without checking surrounding context
 * Missing web controls on non-web services
 * Theoretical injection, traversal, XSS, SSRF, or auth issues without a credible source-to-sink path
-* Generic best practices as vulnerabilities unless they create a concrete risk in context
+* Generic best practices as vulnerabilities unless they create a risk in context
 
 ## Finding Format
 
@@ -126,14 +126,14 @@ Affected files:
 Evidence:
 <specific code, configuration, dependency, or scanner evidence>
 
-Why this matters:
-<realistic exploit scenario and impact>
+Potential Scenario:
+<potential exploit scenario and impact>
 
-Recommended remediation:
-<concrete fix, preferably tailored to the affected code or configuration>
+Potential Remediation:
+<potential fix, preferably tailored to the affected code or configuration>
 
-Validation:
-<how to verify the fix or prove the issue is not exploitable>
+Suggested Validation:
+<suggestions relating to how to verify the fix or prove the issue is not exploitable>
 ```
 
 ## Remediation Guidance
