@@ -17,6 +17,8 @@ Inspect lockfiles before making version-specific claims. For each advisory, asse
 
 For each ecosystem, identify the authoritative dependency source first: lockfile, resolved dependency tree, SBOM, or built image. Prefer resolved versions over manifest constraints when assessing vulnerability applicability.
 
+When listing commands, prefer language-native commands that are the same across Windows and Linux. If a command uses shell-specific syntax, provide separate PowerShell and Bash examples.
+
 ## Language Ecosystems
 
 ### C# / .NET

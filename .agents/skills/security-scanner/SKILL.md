@@ -16,6 +16,17 @@ Treat automated scanner output, dependency advisories, and pattern matches as le
 5. Validate findings manually. Confirm the vulnerable source, sink, missing control, misconfiguration, dependency applicability, or reachable code path before reporting a firm issue.
 6. Report confirmed findings separately from potential issues and coverage gaps.
 
+## Cross-Platform Execution
+
+Prefer commands that work on the current shell and OS. Detect the environment before suggesting or running platform-specific commands.
+
+* On Windows/PowerShell, use PowerShell-native commands and path syntax when possible.
+* On Linux/macOS shells, use POSIX-style commands and path syntax.
+* Prefer cross-platform tools when available: `rg`, language-native CLIs, package-manager CLIs, `osv-scanner`, `trivy`, `syft`, `grype`.
+* Do not assume Unix tools such as `grep`, `find`, `sed`, `awk`, `xargs`, or `/bin/sh` are available on Windows.
+* Do not assume PowerShell cmdlets are available on Linux unless PowerShell is detected.
+* When documenting commands, label OS-specific examples.
+
 ## Review Areas
 
 Load only the reference files needed for the requested scope:
